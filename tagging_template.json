@@ -1,0 +1,14 @@
+{
+   "TagSet": [
+     {
+       "Key": "Project",
+       "Value": "Covid19"
+     }
+     {
+       "Key": "Env",
+       "Value": "Dev"
+     }     {
+       "Key": "Budget",
+       "Value": "10.00"
+     }   ]
+}
