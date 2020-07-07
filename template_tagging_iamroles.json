@@ -1,5 +1,5 @@
 {
-    "RoleName": "Covid19-Dev-IAM-LMB-CustomAlert",
+    "RoleName": "<role name>",
     "Tags": [
      {
        "Key": "Budget",
