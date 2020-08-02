@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-07-31T17:39:07.274Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="OiRhuyW2HofG_Lxnme8B" version="13.5.8" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2020-08-02T04:11:02.135Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="7YfKeIQQJ46Ygk7WLSVV" version="13.5.8" type="github" pages="9">
   <diagram id="Czpa7aY8ec21v4EiHvyP" name="AWS">
     <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -639,7 +639,7 @@
     
   </diagram>
   <diagram id="153qOgP0eSqF774JjWk-" name="Network">
-    <mxGraphModel dx="1157" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="yFWUWByScWUOB-XpvLme-0" />
         <mxCell id="yFWUWByScWUOB-XpvLme-1" parent="yFWUWByScWUOB-XpvLme-0" />
@@ -664,11 +664,14 @@
         <mxCell id="IDiIZ6hldNK-OHZXpocg-2" value="ELB" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_load_balancing;" parent="yFWUWByScWUOB-XpvLme-1" vertex="1">
           <mxGeometry x="960" y="215" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="1uVruyetNw6WPvRAvMrQ-0" value="&lt;div class=&quot;GD0KV33CEU&quot; style=&quot;overflow: hidden ; text-overflow: ellipsis ; color: rgb(0 , 0 , 0) ; font-family: &amp;#34;arial&amp;#34; ; font-size: 14px ; background-color: rgb(234 , 243 , 254)&quot;&gt;Covid19-Dev-SBNT-Web-01&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#248814;fillColor=#E9F3E6;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" vertex="1" parent="yFWUWByScWUOB-XpvLme-1">
+        <mxCell id="1uVruyetNw6WPvRAvMrQ-0" value="&lt;div class=&quot;GD0KV33CEU&quot; style=&quot;overflow: hidden ; text-overflow: ellipsis ; color: rgb(0 , 0 , 0) ; font-family: &amp;#34;arial&amp;#34; ; font-size: 14px ; background-color: rgb(234 , 243 , 254)&quot;&gt;Covid19-Dev-SBNT-Web-01&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#248814;fillColor=#E9F3E6;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" parent="yFWUWByScWUOB-XpvLme-1" vertex="1">
           <mxGeometry x="80" y="80" width="400" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="1uVruyetNw6WPvRAvMrQ-1" value="&lt;div class=&quot;GD0KV33CEU&quot; style=&quot;overflow: hidden ; text-overflow: ellipsis ; color: rgb(0 , 0 , 0) ; font-family: &amp;#34;arial&amp;#34; ; font-size: 14px ; background-color: rgb(234 , 243 , 254)&quot;&gt;Covid19-Dev-SBNT-Data-01&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#E6F2F8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" vertex="1" parent="yFWUWByScWUOB-XpvLme-1">
+        <mxCell id="1uVruyetNw6WPvRAvMrQ-1" value="&lt;div class=&quot;GD0KV33CEU&quot; style=&quot;overflow: hidden ; text-overflow: ellipsis ; color: rgb(0 , 0 , 0) ; font-family: &amp;#34;arial&amp;#34; ; font-size: 14px ; background-color: rgb(234 , 243 , 254)&quot;&gt;Covid19-Dev-SBNT-Data-01&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#E6F2F8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" parent="yFWUWByScWUOB-XpvLme-1" vertex="1">
           <mxGeometry x="80" y="400" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l_hyj3z6vUo-H7seayfw-0" value="Covid19-Dev-IGW-Primary" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58534;gradientColor=none;" vertex="1" parent="yFWUWByScWUOB-XpvLme-1">
+          <mxGeometry x="520" y="280" width="40" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
