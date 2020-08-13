@@ -2,4 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: ./InsertSQL/insertsql.py
-    destination: /usr/local/sbin
+    destination: /usr/local/sbin/
