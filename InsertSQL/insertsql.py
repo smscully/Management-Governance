@@ -4,4 +4,4 @@
 import boto3
 
 
-print("Hello, Covid19. This is the Code Pipeline Test!")
+print("Hello, Covid19. This is the Code Pipeline Test #2!")
