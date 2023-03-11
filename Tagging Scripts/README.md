@@ -1,10 +1,12 @@
 # Tagging Scripts
 
+## Tagging Overview
+
 Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata.  This, in turn, helps organizations  monitor and control resource state, usage, cost, and access. 
 
-AWS may additionally assign AWS generated tags, which usually begin with the prefix "aws:".  These AWS generated tags do not count against the 50 user-defined tag maximum, and AWS generated tags cannot be modified.
+AWS may also assign AWS generated tags, which usually begin with the prefix "aws:".  These AWS generated tags do not count against the 50 user-defined tag maximum, and AWS generated tags cannot be modified.
 
-Additional details, as well as recommended tagging strategies, can be found in the AWS Tagging Best Practices White Paper (https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
+The AWS Tagging Best Practices White Paper provides additional details regard the business justifications for resource tagging, as well as recommended tagging strategies.[^1]
 
 ## Use Cases
 
@@ -16,22 +18,23 @@ When resources are created through the AWS console, tags must be manually create
 
 ### Supplimenting CloudFormation Stacks
 
+???insert text???
 
+## Sample Tags
 
-All AWS cloud resources should have the following tags.
+The file ___.json includes the sample tags that the script will apply to affected resources.  These tags should be modified to meet the specific tagging requirements for each resource.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
 
 | Tag | Description | Key | Value Example |
 |:-----------------|:------------|:--------|:--------|
-| Budget | Budget allocated for this resource. | Budget | 100.00 |
-| Cost Center | Accounting cost center associated with resource. | CostCenter | 901015 |
-| Creator | Email of the creator of the resource. | Creator | name@emailaddress.com |
-| Disaster Recovery | Business criticality of the resource. | DisasterRecovery | Non-critical\/Sensitive\/Vital |
-| End Date | Date when project will end or resource is expected to retire. | EndDate | 20221231 |
+| Owner | Owner and main user of resource. | Owner | name@emailaddress.com |
+| Business Unit | Business Unit to which the resource belongs. | BusinessUnit | 100.00 |
+| SDLC Stage | Indicates production vs. non-production status of the resource. | SDLCStage | Non-critical\/Sensitive\/Vital |
+| Cost Center | Budget or account that will be used to pay for the resource. | CostCenter | 901015 |
+| Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | name@emailaddress.com |
+| ComplainceFramework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | 20221231 |
 | Stack | Subscription type or environment for the resource. | Stack | Development |
-| Owner | Email of the business owner of the resource. | Owner | name@emailaddress.com |
-| Project | Project associated with resource. | Project | Covid19 |
-| SLA Class | Service Level Agreement for this resource. | SLA | Basic\/Bronze\/Silver\/Gold\/Platinum |
-| Start Date | Date when project began or resource was implemented. | StartDate | 20200315 |
+
+Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS White Paper Establishing Your Cloud Foundation on AWS.[^2]
 
 ## Adding Tags: General
 
@@ -68,3 +71,7 @@ Use the [EC2 Tagging JSON Template](https://raw.githubusercontent.com/RussetLeaf
 ```
 aws ec2 create-tags --cli-input-json file://template_tagging_ec2.json
 ```
+
+## References
+[^1]See (https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
+[^2]See (https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
