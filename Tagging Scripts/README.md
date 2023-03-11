@@ -73,5 +73,5 @@ aws ec2 create-tags --cli-input-json file://template_tagging_ec2.json
 ```
 
 ## References
-[^1]See (https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
-[^2]See (https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
+[^1]:See (https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
+[^2]:See (https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
