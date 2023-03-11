@@ -1,3 +1,23 @@
+# Tagging Overview
+
+Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata.  This, in turn, helps organizations  monitor and control resource state, usage, cost, and access. 
+
+AWS may additionally assign AWS generated tags, which usually begin with the prefix "aws:".  These AWS generated tags do not count against the 50 user-defined tag maximum, and AWS generated tags cannot be modified.
+
+Additional details, as well as recommended tagging strategies, can be found in the AWS Tagging Best Practices White Paper (https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
+
+## Use Cases
+
+These scripts are intended for scenarios where tags are added to existing resources, to increase efficiency when using the AWS Console, and to suppliment CloudFormation stacks.
+
+### Increasing Efficiency When Using the AWS Console
+
+When resources are created through the AWS console, tags must be manually created.  Typing in key-value pairs is a time-consuming task that can also lead to typographic errors.  Scripts that contain a consistent set of tags that must be assigned to groups of resources therefore improve productivity and reduce the likelihood of mistagging.
+
+### Supplimenting CloudFormation Stacks
+
+
+
 All AWS cloud resources should have the following tags.
 
 | Tag | Description | Key | Value Example |
@@ -7,7 +27,7 @@ All AWS cloud resources should have the following tags.
 | Creator | Email of the creator of the resource. | Creator | name@emailaddress.com |
 | Disaster Recovery | Business criticality of the resource. | DisasterRecovery | Non-critical\/Sensitive\/Vital |
 | End Date | Date when project will end or resource is expected to retire. | EndDate | 20221231 |
-| Environment | Subscription type or environment for the resource. | Env | Dev\/Test\/Prod |
+| Stack | Subscription type or environment for the resource. | Stack | Development |
 | Owner | Email of the business owner of the resource. | Owner | name@emailaddress.com |
 | Project | Project associated with resource. | Project | Covid19 |
 | SLA Class | Service Level Agreement for this resource. | SLA | Basic\/Bronze\/Silver\/Gold\/Platinum |
