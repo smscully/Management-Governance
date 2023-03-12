@@ -10,13 +10,13 @@ The AWS Tagging Best Practices White Paper provides additional details regard th
 
 ## Use Cases
 
-These scripts are intended for scenarios where tags are added to existing resources, to increase efficiency when using the AWS Console, and to suppliment CloudFormation stacks.
+These scripts are intended for scenarios where tags are added to existing resources, to increase efficiency when using the AWS Console, and to supplement CloudFormation stacks.
 
 ### Increasing Efficiency When Using the AWS Console
 
-When resources are created through the AWS console, tags must be manually created.  Typing in key-value pairs is a time-consuming task that can also lead to typographic errors.  Scripts that contain a consistent set of tags that must be assigned to groups of resources therefore improve productivity and reduce the likelihood of mistagging.
+When resources are created through the AWS console, tags must be manually created.  Typing in key-value pairs is a time-consuming task that can also lead to typographical errors.  Scripts, on the other hand, contain a consistent, reusable set of tags, thereby improving productivity and reducing the likelihood of mistagging.
 
-### Supplimenting CloudFormation Stacks
+### Supplementing CloudFormation Stacks
 
 ???insert text???
 
