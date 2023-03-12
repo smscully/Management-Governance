@@ -22,7 +22,7 @@ When resources are created through the AWS console, tags must be manually create
 
 ## Sample Tags
 
-The file ___.json includes the sample tags that the script will apply to affected resources.  These tags should be modified to meet the specific tagging requirements for each resource.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
+The file template_tagging_rgtapi.json includes the sample tags that the script will apply to affected resources.  These tags should be modified to meet the specific tagging requirements for each resource.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
 
 | Tag | Description | Key | Value Example |
 |:-----------------|:------------|:--------|:--------|
@@ -37,7 +37,10 @@ Beyond mandatory tags, AWS also recommends several discretionary tags that can b
 
 ## Procedure
 
-While tags can be added using the Resources Tag Editor, for efficiency, the preferred method is to use the Resource Groups Tagging API with the project [Resource Group Tagging API JSON Template](https://raw.githubusercontent.com/RussetLeaf/RLCovid19/master/Tagging/template_tagging_rgtapi.json).  Sample AWS CLI code is listed below.
+The scripts in this repository use the AWS Resource Groups Tagging API.  Follow the steps below to add tags to existing resources:
+
+1. Open the template_tagging_rgtapi.json file and add the Amazon Resource Name (ARN) for the resources to which the tags will be added.  Customize the tag keys and values as appropriate.
+2. Open the AWS CLI and run the code listed below.
 
 ```
 aws resourcegroupstaggingapi tag-resources --cli-input-json file://template_tagging_rgtapi.json
