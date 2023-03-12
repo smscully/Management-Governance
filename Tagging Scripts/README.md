@@ -40,7 +40,8 @@ Beyond mandatory tags, AWS also recommends several discretionary tags that can b
 The scripts in this repository use the AWS Resource Groups Tagging API.  Follow the steps below to add tags to existing resources:
 
 1. Open the template_tagging_rgtapi.json file and add the Amazon Resource Name (ARN) for the resources to which the tags will be added.  Customize the tag keys and values as appropriate.
-2. Open the AWS CLI and run the code listed below.
+2. Save the file to either a local directory or an S3 bucket.
+3. Using the AWS CLI, run the code listed below.  The CLI user account must have permissions to the source bucket if the tags.json file is stored in S3.
 
 ```
 aws resourcegroupstaggingapi tag-resources --cli-input-json file://template_tagging_rgtapi.json
