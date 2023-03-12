@@ -6,19 +6,21 @@ Tags are unique key-value pairs that can be assigned to AWS resources.  Each res
 
 AWS may also assign AWS generated tags, which usually begin with the prefix "aws:".  These AWS generated tags do not count against the 50 user-defined tag maximum, and AWS generated tags cannot be modified.
 
-The AWS Tagging Best Practices White Paper provides additional details regard the business justifications for resource tagging, as well as recommended tagging strategies.[^1]
+The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justifications for resource tagging, as well as recommended tagging strategies.[^1]
 
 ## Use Cases
 
-These scripts are intended for scenarios where tags are added to existing resources, to increase efficiency when using the AWS Console, and to supplement CloudFormation stacks.
+These scripts increases efficiency when adding tags through the AWS Console or Tag Editor.  They also simplify tagging for resource stacks created with CloudFormation templates.
 
-### Increasing Efficiency When Using the AWS Console
+### Increasing Efficiency When Using the AWS Console or Tag Editor
 
 When resources are created through the AWS console, tags must be manually created.  Typing in key-value pairs is a time-consuming task that can also lead to typographical errors.  Scripts, on the other hand, contain a consistent, reusable set of tags, thereby improving productivity and reducing the likelihood of mistagging.
 
-### Supplementing CloudFormation Stacks
+### Simplifying Tagging for CloudFormation Templates
 
-???insert text???
+Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to templates helps reduce tagging errors.  However, defining tags within CloudFormation templates can lead to additional rework when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.
+
+Rather than updating the CloudFormation template code when tags change, a simpler method is to replace the inline template tag code with a reference to a tag script.  In this case, revisions to the CloudFormation template are reduced, with with the tag updates restricted to the tags.json file.
 
 ## Sample Tags
 
@@ -33,7 +35,7 @@ The file template_tagging_rgtapi.json includes the sample tags that the script w
 | Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | Marketing |
 | Compliance Framework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | HIPPA |
 
-Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS White Paper Establishing Your Cloud Foundation on AWS.[^2]
+Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
 ## Procedure
 
