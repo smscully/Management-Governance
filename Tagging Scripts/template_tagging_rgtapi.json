@@ -4,15 +4,11 @@
       "<arn>"
     ],
     "Tags": {
-       "Budget": "100.00",
-       "CostCenter": "901015",
-       "Creator": "name@emailaddress.com",
-       "DisasterRecovery": "Non-critical",
-       "EndDate": "20221231",
-       "Env": "Dev",
-       "Owner": "name@emailaddress.com",
-       "Project": "Covid19",
-       "SLA": "Basic",
-       "StartDate": "20200315"
+       "Owner": "Customer Loyalty Team",
+       "BusinessUnit": "Marketing",
+       "SDLCStage": "Development",
+       "CostCenter": "12345",
+       "FinancialOwner": "Marketing",
+       "ComplianceFramework": "HIPAA"
     }
 }
