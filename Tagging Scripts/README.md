@@ -26,17 +26,16 @@ The file ___.json includes the sample tags that the script will apply to affecte
 
 | Tag | Description | Key | Value Example |
 |:-----------------|:------------|:--------|:--------|
-| Owner | Owner and main user of resource. | Owner | name@emailaddress.com |
-| Business Unit | Business Unit to which the resource belongs. | BusinessUnit | 100.00 |
-| SDLC Stage | Indicates production vs. non-production status of the resource. | SDLCStage | Non-critical\/Sensitive\/Vital |
-| Cost Center | Budget or account that will be used to pay for the resource. | CostCenter | 901015 |
-| Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | name@emailaddress.com |
-| ComplainceFramework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | 20221231 |
-| Stack | Subscription type or environment for the resource. | Stack | Development |
+| Owner | Owner and main user of resource. | Owner | Customer Loyalty Team |
+| Business Unit | Business Unit to which the resource belongs. | BusinessUnit | Marketing |
+| SDLC Stage | Indicates production vs. non-production status of the resource. | SDLCStage | Development |
+| Cost Center | Budget or account that will be used to pay for the resource. | CostCenter | 12345 |
+| Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | Marketing |
+| Compliance Framework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | HIPPA |
 
 Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS White Paper Establishing Your Cloud Foundation on AWS.[^2]
 
-## Adding Tags: General
+## Procedure
 
 While tags can be added using the Resources Tag Editor, for efficiency, the preferred method is to use the Resource Groups Tagging API with the project [Resource Group Tagging API JSON Template](https://raw.githubusercontent.com/RussetLeaf/RLCovid19/master/Tagging/template_tagging_rgtapi.json).  Sample AWS CLI code is listed below.
 
