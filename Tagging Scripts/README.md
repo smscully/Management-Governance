@@ -37,7 +37,7 @@ The file template_tagging_rgtapi.json includes the sample tags that the script w
 
 Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
-## Deployment Instructions
+## Usage Instructions
 
 The scripts in this repository use the AWS Resource Groups Tagging API.  Follow the steps below to add tags to existing resources:
 
