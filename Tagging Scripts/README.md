@@ -37,16 +37,17 @@ The file template_tagging_rgtapi.json includes the sample tags that the script w
 
 Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
-## Procedure
+## Deployment Instructions
 
 The scripts in this repository use the AWS Resource Groups Tagging API.  Follow the steps below to add tags to existing resources:
 
-1. Open the template_tagging_rgtapi.json file and add the Amazon Resource Name (ARN) for the resources to which the tags will be added.  Customize the tag keys and values as appropriate.
-2. Save the file to either a local directory or an S3 bucket.
-3. Using the AWS CLI, run the code listed below.  The CLI user account must have permissions to the source bucket if the tags.json file is stored in S3.
+1. Download and save the tags.json file to either a local directory or an S3 bucket.
+2. Open the tags.json file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the Amazon Resource Names (ARNs) section of the AWS General Reference for instructions on finding resource ARNs.[^3]
+3. Customize the tag keys and values as appropriate. 
+4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the tags.json file is stored in S3.
 
 ```
-aws resourcegroupstaggingapi tag-resources --cli-input-json file://template_tagging_rgtapi.json
+aws resourcegroupstaggingapi tag-resources --cli-input-json file://tags.json
 ```
 
 ## Adding Tags: Exceptional Cases
@@ -80,3 +81,4 @@ aws ec2 create-tags --cli-input-json file://template_tagging_ec2.json
 ## References
 [^1]:See https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html.
 [^2]:See https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html.
+[^3]:See https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html.
