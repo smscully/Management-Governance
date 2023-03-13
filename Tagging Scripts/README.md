@@ -1,5 +1,7 @@
 # Tagging Scripts
 
+The tags.json file is a customizable script that can be used to add tags sets to single or multiple existing resources.  The instructions below explain how to use the script with the CLI and CloudFormation templates (??).
+
 ## Tagging Overview
 
 Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata.  This, in turn, helps organizations  monitor and control resource state, usage, cost, and access. 
