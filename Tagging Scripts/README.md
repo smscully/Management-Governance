@@ -8,27 +8,15 @@ Tags are unique key-value pairs that can be assigned to AWS resources.  Each res
 
 AWS may also assign AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justification for resource tagging, as well as recommended tagging strategies.[^1]
 
-## Use Cases
+## Sample Tags Included in the JSON Tag Files
 
-Using the JSON tag files in this directory increases efficiency when adding tags to existing resources, and simplifies tagging for resource stacks created with CloudFormation templates.
+The JSON tag files include the mandatory tags keys that AWS recommends organizations apply to all resources, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements.
 
-### Increasing Efficiency and Accuracy Using the Resource Groups Tagging API
+Beyond mandatory tags, AWS also suggests several discretionary tags that can be used on an as-needed basis.  For more information regarding AWS's recommended tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
-When resources are created through the AWS console, tags can be manually added to each resource at the time of creation by entering key-value pairs on the Add Tag screen.  To reduce repetition, the AWS Tag Editor can be used to add tags to multiple resources at once.  However, the Tag Editor requires the AWS user to add tags through a manual process of entering key-value pair data for each tag.
+The sample tags are listed below.
 
-The Resource Groups Tagging API increases efficiency and accuracy by using a JSON tag file to add tags to existing resources.  The JSON tag file contains the tag key-value pairs and the Amazon Resource Names (ARNs) of the resources to which the tags will be added.  Using the a JSON tag file eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
-
-### Simplifying Tagging for CloudFormation Templates
-
-Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to CloudFormation templates helps reduce tagging errors.  Nevertheless, defining tags within CloudFormation templates can lead to duplicate work when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.  Moreover, for templates with multiple resources, the tags must be coded in the properties for every resource, reducing readability and increasing the likelihood of errors when copying and pasting tag sets.
-
-Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
-
-## Sample Tags
-
-The JSON tag files include sample tags that the script will apply to the identified resources.  The tag files should be modified to meet the specific tagging requirements for the affected resources.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
-
-| Tag | Description | Key | Value Example |
+| Tag | Description | Key | Value |
 |:-----------------|:------------|:--------|:--------|
 | Owner | Owner and main user of resource. | Owner | Customer Loyalty Team |
 | Business Unit | Business Unit to which the resource belongs. | BusinessUnit | Marketing |
@@ -37,13 +25,15 @@ The JSON tag files include sample tags that the script will apply to the identif
 | Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | Marketing |
 | Compliance Framework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | HIPPA |
 
-Beyond mandatory tags, AWS also recommends several discretionary tags that should be used on an as-needed basis.  For more information regarding recommended organizational tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
-
 ## Usage Instructions
 
 To add tags to existing resources, use the Resource Groups Tagging API.  To CloudFormation.
 
-### Resource Groups Tagging API
+### Add Tags to Existing Resources Using the Resource Groups Tagging API
+
+When resources are created through the AWS console, tags can be manually added by entering key-value pairs on the Add Tag screen.  To reduce repetition, the AWS Tag Editor supports adding tags to multiple existing resources at once.  However, the Tag Editor involves the manual process of entering key-value pair data for each tag.
+
+The Resource Groups Tagging API increases efficiency and accuracy by using a JSON tag file that contains tag key-value pairs and Amazon Resource Names (ARNs) of existing resources.  Using the a JSON tag file eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
 
 1. Download and save the (cli_tags.json) file to either a local directory or an S3 bucket.
 2. Open the (cli_tags.json) file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the Amazon Resource Names (ARNs) section of the AWS General Reference for instructions on finding resource ARNs.[^3]
@@ -54,7 +44,11 @@ To add tags to existing resources, use the Resource Groups Tagging API.  To Clou
 aws resourcegroupstaggingapi tag-resources --cli-input-json file://tags.json
 ```
 
-### CloudFormation Templates
+### Simplifying Tagging for CloudFormation Templates
+
+Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to CloudFormation templates helps reduce tagging errors.  Nevertheless, defining tags within CloudFormation templates can lead to duplicate work when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.  Moreover, for templates with multiple resources, the tags must be coded in the properties for every resource, reducing readability and increasing the likelihood of errors when copying and pasting tag sets.
+
+Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
 
 1. Download and save the (cfn_tags.json) file to either a local directory or an S3 bucket.
 2. Open the (cfn_tags.json) file and customize the tag key-value pairs as needed. 
