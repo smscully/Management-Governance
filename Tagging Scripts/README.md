@@ -62,7 +62,8 @@ aws resourcegroupstaggingapi tag-resources --cli-input-json file://tags.json
 2. Open the (cfn_tags.json) file and customize the tag key-value pairs as needed. 
 3. To run a test, download the (cfn_template.yaml) file.  Optionally, use a different working CloudFormation template.
 4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
-**NOTE:** Replace the BucketName ParameterValue with a unique value for an S3 bucket name.
+
+**NOTE:** Replace the BucketName ParameterValue with a unique name for an S3 bucket.
 
 ```
 aws cloudformation create-stack --stack-name teststack --template-body file://cfn_template.yaml \
