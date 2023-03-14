@@ -71,6 +71,6 @@ aws cloudformation create-stack --stack-name teststack --template-body file://cf
 ```
 
 ## References
-[^1]:See https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html.
-[^2]:See https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html.
-[^3]:See https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html.
+[^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
+[^2]:See [Establishing Your Cloud Foundation on AWS](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
+[^3]:See [AWS General Reference](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html).
