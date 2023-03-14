@@ -1,34 +1,32 @@
 # Tagging Scripts
 
-The JSON tag files in this directory are customizable scripts that can be used to add tags sets to single or multiple existing resources.  The instructions below explain how to use the script with the CLI and CloudFormation templates (??).
+The JSON tag files in this directory can be customized to add tags sets to single or multiple resources.  The instructions below explain how to use the files with either the Resource Groups Tagging API or CloudFormation templates.
 
 ## Tagging Overview
 
-Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata.  This, in turn, helps organizations  monitor and control resource state, usage, cost, and access. 
+Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata categories.  Tags help organizations  monitor and control resource state, usage, cost, and access. 
 
-AWS may also assign AWS generated tags, which usually begin with the prefix "aws:".  These AWS generated tags do not count against the 50 user-defined tag maximum, and AWS generated tags cannot be modified.
-
-The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justifications for resource tagging, as well as recommended tagging strategies.[^1]
+AWS may also assign AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justification for resource tagging, as well as recommended tagging strategies.[^1]
 
 ## Use Cases
 
-These scripts increases efficiency when adding tags to existing resources, and also simplify tagging for resource stacks created with CloudFormation templates.
+Using the JSON tag files in this directory increases efficiency when adding tags to existing resources, and simplifies tagging for resource stacks created with CloudFormation templates.
 
-### Increasing Efficiency Using the Resource Groups Tagging API
+### Increasing Efficiency and Accuracy Using the Resource Groups Tagging API
 
-When resources are created through the AWS console, tags must be manually added to each resource at the time of creation.  Typing in key-value pairs is a time-consuming task that can lead to typographical errors.  While the AWS Tag Editor does alleviate some of the repetitive work associated with adding tags piecemeal, it nevertheless requires the AWS user to manually enter the key-value data for each tag.
+When resources are created through the AWS console, tags can be manually added to each resource at the time of creation by entering key-value pairs on the Add Tag screen.  To reduce repetition, the AWS Tag Editor can be used to add tags to multiple resources at once.  However, the Tag Editor requires the AWS user to add tags through a manual process of entering key-value pair data for each tag.
 
-The Resource Groups Tagging API increases efficiency and accuracy by using a JSON file to add tags to existing resources.  The JSON file contains the tag key-value pairs and the Amazon Resource Names (ARNs) of the resources to which the tags will be added, eliminating the repetition and propensity for error inherent to manaual tag addition.
+The Resource Groups Tagging API increases efficiency and accuracy by using a JSON tag file to add tags to existing resources.  The JSON tag file contains the tag key-value pairs and the Amazon Resource Names (ARNs) of the resources to which the tags will be added.  Using the a JSON tag file eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
 
 ### Simplifying Tagging for CloudFormation Templates
 
-Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to templates helps reduce tagging errors.  However, defining tags within CloudFormation templates can lead to duplicate work when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.  Moreover, for templates with multiple resources, the tags must be coded in the properties for every resource, reducing readability, increasing the chance of error when copying and pasting tag sets.
+Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to CloudFormation templates helps reduce tagging errors.  Nevertheless, defining tags within CloudFormation templates can lead to duplicate work when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.  Moreover, for templates with multiple resources, the tags must be coded in the properties for every resource, reducing readability and increasing the likelihood of errors when copying and pasting tag sets.
 
-Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
+Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
 
 ## Sample Tags
 
-The JSON tag files include sample tags that the script will apply to listed resources.  The tag files should be modified to meet the specific tagging requirements for the affected resources.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
+The JSON tag files include sample tags that the script will apply to the identified resources.  The tag files should be modified to meet the specific tagging requirements for the affected resources.  The sample tags listed below are based on the recommended mandatory tags that AWS suggests organization apply to all resources.
 
 | Tag | Description | Key | Value Example |
 |:-----------------|:------------|:--------|:--------|
@@ -39,7 +37,7 @@ The JSON tag files include sample tags that the script will apply to listed reso
 | Financial Owner | Specifies who is responsible for the costs associated with the resource. | FinancialOwner | Marketing |
 | Compliance Framework | Identifies resources that are associated with a compliance framework. | ComplianceFramework | HIPPA |
 
-Beyond mandatory tags, AWS also recommends several discretionary tags that can be used on an as-needed basis.  For more information regarding recommended organization tagging requirements, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
+Beyond mandatory tags, AWS also recommends several discretionary tags that should be used on an as-needed basis.  For more information regarding recommended organizational tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
 ## Usage Instructions
 
