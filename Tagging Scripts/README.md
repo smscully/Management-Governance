@@ -64,12 +64,11 @@ aws cloudformation create-stack --stack-name teststack --template-body file://cf
 
 ### CloudFormation Templates Run In AWS CodePipeline
 
-Tags can be added 
-
-1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
-2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
+AWS CodePipeline can create a continuous delivery workflow for CloudFormation templates, helping automate the creation of stacks and resources.  Tags are added to each of the resources using the CodePipeline template configuration file.  The [codepipeline_template_config.json](./codepipeline_template_config.json) file contains sample tags.  For a walkthrough of using Cloudformation with CodePipeline, see the *Continuous delivery with CodePipeline* section of the *AWS CloudFormation User Guide*.[^4]  The *AWS CloudFormation artifacts* section of the *AWS CloudFormation User Guide* describes the usage and requirements of the template configuration file.[^5]
 
 ## References
 [^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
 [^2]:See [Establishing Your Cloud Foundation on AWS](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
 [^3]:See [AWS General Reference](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html).
+[^4]:See [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline.html).
+[^4]:See [AWS CloudFormation Artifacts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-cfn-artifacts.html).
