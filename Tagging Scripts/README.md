@@ -1,6 +1,6 @@
 # Tagging Scripts
 
-The JSON tag files in this directory can be customized to add tags sets to single or multiple resources.  The instructions below explain how to use the files with either the Resource Groups Tagging API or CloudFormation templates.
+The JSON tag files in this directory can be customized to add tags sets to single or multiple resources.  The instructions below explain how to use the files with the Resource Groups Tagging API, CloudFormation templates deployed via the AWS CLI, and CloudFormation templates run through AWS CodePipeline.
 
 ## Tagging Overview
 
@@ -50,7 +50,7 @@ Tags can be added programmatically to resource stacks at the time of creation us
 
 Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
 
-1. Download and save the (cfn_tags.json) file to either a local directory or an S3 bucket.
+1. Download and save the (/cfn_tags.json) file to either a local directory or an S3 bucket.
 2. Open the (cfn_tags.json) file and customize the tag key-value pairs as needed. 
 3. To run a test, download the (cfn_template.yaml) file.  Optionally, use a different working CloudFormation template.
 4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
