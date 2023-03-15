@@ -35,7 +35,7 @@ When resources are created through the AWS console, tags can be manually added b
 
 The Resource Groups Tagging API increases efficiency and accuracy by using a JSON tag file that contains tag key-value pairs and Amazon Resource Names (ARNs) of existing resources.  Using the a JSON tag file eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
 
-1. Download and save the [cli_tags.json](../cli_tags.json) file to either a local directory or an S3 bucket.
+1. Download and save the [cli_tags.json](./cli_tags.json) file to either a local directory or an S3 bucket.
 2. Open the (cli_tags.json) file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the Amazon Resource Names (ARNs) section of the AWS General Reference for instructions on finding resource ARNs.[^3]
 3. Customize the tag keys and values as appropriate. 
 4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the (cli_tags.json) file is stored in S3.
