@@ -50,12 +50,12 @@ Tags can be added programmatically to resource stacks at the time of creation us
 
 Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
 
-1. Download and save the (/cfn_tags.json) file to either a local directory or an S3 bucket.
-2. Open the (cfn_tags.json) file and customize the tag key-value pairs as needed. 
-3. To run a test, download the (cfn_template.yaml) file.  Optionally, use a different working CloudFormation template.
-4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
+1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
+2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
+3. To run a test, download the [cfn_template.json](./cfn_template.json) file.  Optionally, use a different valid CloudFormation template.
+4. Using the AWS CLI, run the command listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
 
-**NOTE:** Replace the BucketName ParameterValue with a unique name for an S3 bucket.
+**NOTE:** In the CLI command below, replace the BucketName ParameterValue with a unique name for an S3 bucket.
 
 ```
 aws cloudformation create-stack --stack-name teststack --template-body file://cfn_template.yaml \
@@ -65,6 +65,9 @@ aws cloudformation create-stack --stack-name teststack --template-body file://cf
 ### CloudFormation Templates Run In AWS CodePipeline
 
 Tags can be added 
+
+1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
+2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
 
 ## References
 [^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
