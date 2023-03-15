@@ -52,7 +52,7 @@ Rather than updating the CloudFormation template code when tags change, a simple
 
 1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
 2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
-3. To run a test, download the [cfn_template.json](./cfn_template.json) file.  Optionally, use a different valid CloudFormation template.
+3. To run a test, download the [cfn_template.yaml](./cfn_template.yaml) file.  Optionally, use a different valid CloudFormation template.
 4. Using the AWS CLI, run the command listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
 
 **NOTE:** In the CLI command below, replace the BucketName ParameterValue with a unique name for an S3 bucket.
