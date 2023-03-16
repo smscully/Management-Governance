@@ -6,7 +6,7 @@ The JSON tag files in this directory add tag sets to AWS resources using one of 
 + CloudFormation templates deployed via the AWS CLI
 + CloudFormation templates run in AWS CodePipeline
 
-Each of these methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Because JSON tag files can be reviewed and version-controlled, these methods described herein reduce the chances of tagging errors.
+Each of these methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Because JSON tag files can be reviewed and version-controlled, these methods described herein reduce the potential for tagging errors.
 
 ## Tagging Overview
 
