@@ -24,7 +24,7 @@ There are three JSON tag files included in the directory:
 
 AWS recommends that organizations apply both mandatory and discretionary tags to all resources.[^2]  Each of the JSON tag files contains the baseline mandatory tags, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements, including adding any applicable discretionary tags.
 
-The tags contained in the JSON Tag Files are as follows:
+The tags contained in the JSON tag files are as follows:
 
 | Tag | Description | Key | Value |
 |:-----------------|:------------|:--------|:--------|
