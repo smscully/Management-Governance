@@ -70,6 +70,10 @@ aws cloudformation create-stack --stack-name teststack --template-body file://cf
 
 AWS CodePipeline can create a continuous delivery workflow for CloudFormation templates, helping automate the creation of stacks and resources.  Tags are added to each of the resources using the CodePipeline template configuration file.  The [codepipeline_template_config.json](./codepipeline_template_config.json) file contains the AWS mandatory tags, along with sample values.  For a walkthrough of using Cloudformation with CodePipeline, see the *Continuous delivery with CodePipeline* section of the *AWS CloudFormation User Guide*.[^4]  The *AWS CloudFormation artifacts* section of the *AWS CloudFormation User Guide* describes the template configuration file.[^5]
 
+## License
+
+Licensed under the [GNU General Public License v3.0](../LICENSE).
+
 ## References
 [^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
 [^2]:See [Establishing Your Cloud Foundation on AWS, Choosing tags for your environment](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
