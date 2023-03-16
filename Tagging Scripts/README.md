@@ -26,7 +26,7 @@ AWS recommends that organizations apply both mandatory and discretionary tags to
 
 The tags contained in the JSON tag files are as follows:
 
-| Tag | Description | Key | Value |
+| Tag | Description | Key | Example Value |
 |:-----------------|:------------|:--------|:--------|
 | Owner | Owner and main user of the resource. | Owner | Customer Loyalty Team |
 | Business Unit | Business Unit to which the resource belongs. | BusinessUnit | Marketing |
