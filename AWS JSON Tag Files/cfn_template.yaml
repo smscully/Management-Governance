@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
-Description: Creates a sample S3 bucket to show how tags can be added via the cfn_tags.json script at the time of creation
+Description: Creates a sample S3 bucket to show how tags can be added at the time of creation via the cfn_tags.json script.
 
 Metadata:
   License: GNU General Public License v3.0
