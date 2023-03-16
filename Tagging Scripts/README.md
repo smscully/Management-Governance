@@ -1,4 +1,10 @@
-# Tagging Scripts
+# JSON Tag Files
+
+Tags are unique key-value pairs assigned to AWS resources.  There are two types of tags: user-defined and AWS generated.  User-defined tags are assigned by users and help organizations monitor and control resource state, usage, cost, and access.  AWS best practices encourage implementing user-defined tags to categorize resources based on department, environment, application, and other metadata categories.  Each resource can have a maximum of 50 user-defined tags.    
+
+AWS creates and assigns AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides guidelines to develop organizational resource tagging strategies.[^1]
+
+User-defined tags can be added using several methods.  Because JSON tag files can be reviewed and version-controlled, the methods described herein reduce the potential for tagging errors.  Each of the methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Further, using a JSON tag file is more efficient than defining tags within a CloudFormation template, since templates require that tag sets be coded for every resource.
 
 The JSON tag files in this folder add tag sets to AWS resources using one of the following three methods:
 
@@ -6,15 +12,7 @@ The JSON tag files in this folder add tag sets to AWS resources using one of the
 + CloudFormation templates deployed via the AWS CLI
 + CloudFormation templates run in AWS CodePipeline
 
-Because JSON tag files can be reviewed and version-controlled, the methods described herein reduce the potential for tagging errors.  Each of the methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Further, using a JSON tag file is more efficient than defining tags within a CloudFormation template, since templates require that tag sets be coded for every resource.
-
-## Tagging Overview
-
-Tags are unique key-value pairs assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage using tags to categorize resources based on department, environment, application, and other metadata categories.  Tags help organizations monitor and control resource state, usage, cost, and access. 
-
-AWS may also assign AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides guidelines to develop organizational resource tagging strategies.[^1]
-
-## Overview Of The JSON Tag Files
+## Description Of The JSON Tag Files
 
 There are three JSON tag files included in this folder:
 
