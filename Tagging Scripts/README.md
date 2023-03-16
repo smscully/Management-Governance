@@ -28,7 +28,7 @@ The tags contained in the JSON tag files are as follows:
 
 | Tag | Description | Key | Value |
 |:-----------------|:------------|:--------|:--------|
-| Owner | Owner and main user of resource. | Owner | Customer Loyalty Team |
+| Owner | Owner and main user of the resource. | Owner | Customer Loyalty Team |
 | Business Unit | Business Unit to which the resource belongs. | BusinessUnit | Marketing |
 | SDLC Stage | Indicates production vs. non-production status of the resource. | SDLCStage | Development |
 | Cost Center | Budget or account that will be used to pay for the resource. | CostCenter | 12345 |
