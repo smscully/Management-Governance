@@ -16,7 +16,7 @@ AWS may also assign AWS generated tags, which begin with the prefix "aws:".  The
 
 ## Overview Of The JSON Tag Files
 
-There are three JSON tag files included in the directory:
+There are three JSON tag files included in this directory:
 
 + [api_tags.json](./api_tags.json): used with the Resource Groups Tagging API
 + [cfn_tags.json](./cfn_tags.json): used with CloudFormation templates deployed via the AWS CLI
