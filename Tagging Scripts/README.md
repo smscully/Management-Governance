@@ -1,6 +1,6 @@
 # Tagging Scripts
 
-The JSON tag files in this directory add tag sets to AWS resources using one of three methods:
+The JSON tag files in this directory add tag sets to AWS resources using one of the following three methods:
 
 + Resource Groups Tagging API
 + CloudFormation templates deployed via the AWS CLI
