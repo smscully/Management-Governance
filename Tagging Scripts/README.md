@@ -4,7 +4,7 @@ The JSON tag files in this directory can be customized to add tags sets to singl
 
 ## Tagging Overview
 
-Tags are unique key-value pairs that can be assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage employing tags to categorize resources based on department, environment, application, and other metadata categories.  Tags help organizations  monitor and control resource state, usage, cost, and access. 
+Tags are unique key-value pairs assigned to AWS resources.  Each resource can have a maximum of 50 user-defined tags.  AWS best practices encourage using tags to categorize resources based on department, environment, application, and other metadata categories.  Tags help organizations monitor and control resource state, usage, cost, and access. 
 
 AWS may also assign AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justification for resource tagging, as well as recommended tagging strategies.[^1]
 
@@ -12,7 +12,7 @@ AWS may also assign AWS generated tags, which begin with the prefix "aws:".  The
 
 The JSON tag files include the mandatory tags keys that AWS recommends organizations apply to all resources, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements.
 
-Beyond mandatory tags, AWS also suggests several discretionary tags that can be used on an as-needed basis.  For more information regarding AWS's recommended tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
+Beyond mandatory tags, AWS also suggests several discretionary tags that should be used on an as-needed basis.  For more information regarding AWS's recommended tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
 
 The sample tags are listed below.
 
