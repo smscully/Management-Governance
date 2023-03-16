@@ -1,6 +1,6 @@
 # Tagging Scripts
 
-The JSON tag files in this directory add tag sets to AWS resources using one of the following three methods:
+The JSON tag files in this folder add tag sets to AWS resources using one of the following three methods:
 
 + Resource Groups Tagging API
 + CloudFormation templates deployed via the AWS CLI
@@ -16,7 +16,7 @@ AWS may also assign AWS generated tags, which begin with the prefix "aws:".  The
 
 ## Overview Of The JSON Tag Files
 
-There are three JSON tag files included in this directory:
+There are three JSON tag files included in this folder:
 
 + [api_tags.json](./api_tags.json): used with the Resource Groups Tagging API
 + [cfn_tags.json](./cfn_tags.json): used with CloudFormation templates deployed via the AWS CLI
@@ -43,7 +43,7 @@ Follow the instructions below to add tags using the Resource Groups Tagging API,
 
 Use the Resource Groups Tagging API to add tags to existing resources.
 
-1. Download and save the [api_tags.json](./api_tags.json) file to either a local directory or an S3 bucket.
+1. Download and save the [api_tags.json](./api_tags.json) file to either a local folder or an S3 bucket.
 2. Open the [api_tags.json](./api_tags.json) file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the *Amazon Resource Names (ARNs)* section of the *AWS General Reference* for instructions on finding resource ARNs.[^3]
 3. Customize the tag keys and values as appropriate. 
 4. Using the AWS CLI, run the code listed below.  The CLI user account must have read permissions to the source bucket if the [api_tags.json](./api_tags.json) file is stored in S3.
@@ -56,7 +56,7 @@ aws resourcegroupstaggingapi tag-resources --cli-input-json file://tags.json
 
 Follow these instructions when adding tags to resources that will be created through a CloudFormation template deployed via the AWS CLI.
 
-1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
+1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local folder or an S3 bucket.
 2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
 3. To run a test, download the [cfn_template.yaml](./cfn_template.yaml) file.  Optionally, use a different valid CloudFormation template.
 4. Using the AWS CLI, run the command listed below.  The CLI user account must have read permissions to the source bucket if the files are stored in S3.
