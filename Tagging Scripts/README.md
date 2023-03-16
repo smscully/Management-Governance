@@ -1,6 +1,12 @@
 # Tagging Scripts
 
-The JSON tag files in this directory can be customized to add tags sets to single or multiple resources.  The instructions below explain how to use the files with the Resource Groups Tagging API, CloudFormation templates deployed via the AWS CLI, and CloudFormation templates run in AWS CodePipeline.
+The JSON tag files in this directory add tag sets to AWS resources using three methods:
+
++ Resource Groups Tagging API
++ CloudFormation templates deployed via the AWS CLI
++ CloudFormation templates run in AWS CodePipeline
+
+Each of these methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Because JSON tag files can be reviewed and version-controlled, these methods described herein reduce the chances of tagging errors.
 
 ## Tagging Overview
 
@@ -8,13 +14,17 @@ Tags are unique key-value pairs assigned to AWS resources.  Each resource can ha
 
 AWS may also assign AWS generated tags, which begin with the prefix "aws:".  These AWS generated tags cannot be modified and do not count against the 50 user-defined tag maximum.  The AWS whitepaper *Tagging Best Practices* provides additional details regard the business justification for resource tagging, as well as recommended tagging strategies.[^1]
 
-## Sample Tags Included In The JSON Tag Files
+## Overview Of The JSON Tag Files
 
-The JSON tag files include the mandatory tags keys that AWS recommends organizations apply to all resources, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements.
+There are three JSON Tag Files included in the directory:
 
-Beyond mandatory tags, AWS also suggests several discretionary tags that should be used on an as-needed basis.  For more information regarding AWS's recommended tagging strategies, review the AWS whitepaper *Establishing Your Cloud Foundation on AWS*.[^2]
++ api_tags.json: used with the Resource Groups Tagging API
++ cfn_tags: used with CloudFormation templates deployed via the AWS CLI
++ codepipeline_template_config.json: used with CloudFormation templates run in AWS CodePipeline
 
-The sample tags are listed below.
+AWS recommends that organizations apply both mandatory and discretionary tags to all resources.[^2]  Each of the JSON tag files contains the baseline mandatory tags, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements, including adding any applicable discretionary tags.
+
+The tags contained in the JSON Tag Files are as follows:
 
 | Tag | Description | Key | Value |
 |:-----------------|:------------|:--------|:--------|
@@ -31,9 +41,7 @@ Follow the instructions below to add tags using the Resource Groups Tagging API,
 
 ### Resource Groups Tagging API
 
-When resources are created through the AWS console, tags can be manually added by entering key-value pairs on the Add Tag screen.  To reduce repetition, the AWS Tag Editor supports adding tags to multiple existing resources at once.  However, the Tag Editor involves the manual process of entering key-value pair data for each tag.
-
-The Resource Groups Tagging API increases efficiency and accuracy by using a JSON tag file that contains tag key-value pairs and Amazon Resource Names (ARNs) of existing resources.  Using the a JSON tag file eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
+The Resource Groups Tagging API adds tags to existing resources using the [api_tags.json](./api_tags.json) file.   eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
 
 1. Download and save the [api_tags.json](./api_tags.json) file to either a local directory or an S3 bucket.
 2. Open the [api_tags.json](./api_tags.json) file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the *Amazon Resource Names (ARNs)* section of the *AWS General Reference* for instructions on finding resource ARNs.[^3]
@@ -68,7 +76,7 @@ AWS CodePipeline can create a continuous delivery workflow for CloudFormation te
 
 ## References
 [^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
-[^2]:See [Establishing Your Cloud Foundation on AWS](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
+[^2]:See [Establishing Your Cloud Foundation on AWS, Choosing tags for your environment](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/welcome.html).
 [^3]:See [AWS General Reference, Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html).
 [^4]:See [AWS CloudFormation User Guide, Continuous delivery with CodePipeline](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline.html).
 [^5]:See [AWS CloudFormation User Guide, AWS CloudFormation artifacts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-cfn-artifacts.html).
