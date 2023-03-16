@@ -16,11 +16,11 @@ AWS may also assign AWS generated tags, which begin with the prefix "aws:".  The
 
 ## Overview Of The JSON Tag Files
 
-There are three JSON Tag Files included in the directory:
+There are three JSON tag files included in the directory:
 
-+ api_tags.json: used with the Resource Groups Tagging API
-+ cfn_tags: used with CloudFormation templates deployed via the AWS CLI
-+ codepipeline_template_config.json: used with CloudFormation templates run in AWS CodePipeline
++ [api_tags.json](./api_tags.json): used with the Resource Groups Tagging API
++ [cfn_tags.json](./cfn_tags.json): used with CloudFormation templates deployed via the AWS CLI
++ [codepipeline_template_config.json](./codepipeline_template_config.json): used with CloudFormation templates run in AWS CodePipeline
 
 AWS recommends that organizations apply both mandatory and discretionary tags to all resources.[^2]  Each of the JSON tag files contains the baseline mandatory tags, along with example values.  The tag key-value pairs should be modified as necessary to meet organizational tagging requirements, including adding any applicable discretionary tags.
 
