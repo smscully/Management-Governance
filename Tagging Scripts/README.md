@@ -6,7 +6,7 @@ The JSON tag files in this directory add tag sets to AWS resources using one of 
 + CloudFormation templates deployed via the AWS CLI
 + CloudFormation templates run in AWS CodePipeline
 
-Each of these methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Because JSON tag files can be reviewed and version-controlled, these methods described herein reduce the potential for tagging errors.
+Because JSON tag files can be reviewed and version-controlled, the methods described herein reduce the potential for tagging errors.  Each of the methods is preferable to manually adding tags via the AWS Console or Tag Editor.  Further, using a JSON tag file is more efficient than defining tags within a CloudFormation template, since templates require that tag sets be coded for every resource.
 
 ## Tagging Overview
 
@@ -41,7 +41,7 @@ Follow the instructions below to add tags using the Resource Groups Tagging API,
 
 ### Resource Groups Tagging API
 
-The Resource Groups Tagging API adds tags to existing resources using the [api_tags.json](./api_tags.json) file.   eliminates the manual process of adding tags piecemeal, and also decreases the chance of tagging errors, as the JSON tag file can be reviewed and version-controlled.
+Use the Resource Groups Tagging API to add tags to existing resources.
 
 1. Download and save the [api_tags.json](./api_tags.json) file to either a local directory or an S3 bucket.
 2. Open the [api_tags.json](./api_tags.json) file and add the Amazon Resource Names (ARNs) for the resources to which the tags will be added.  Please refer to the *Amazon Resource Names (ARNs)* section of the *AWS General Reference* for instructions on finding resource ARNs.[^3]
@@ -54,9 +54,7 @@ aws resourcegroupstaggingapi tag-resources --cli-input-json file://tags.json
 
 ### CloudFormation Templates Deployed Via The AWS CLI
 
-Tags can be added programmatically to resource stacks at the time of creation using CloudFormation templates.  The reusability and versioning inherent to CloudFormation templates helps reduce tagging errors.  Nevertheless, defining tags within CloudFormation templates can lead to duplicate work when the tag keys or values must be updated, e.g. when the resources will have different owners, cost centers, etc.  Moreover, for templates with multiple resources, the tags must be coded in the properties for every resource, reducing readability and increasing the likelihood of errors when copying and pasting tag sets.
-
-Rather than updating the CloudFormation template code when tags change, a simpler method is to completely remove the inline template tag code and add tags using a JSON tag file.  The JSON file contains the tags key-value pairs and is applied at the time the CloudFormation template is run in the CLI.
+Follow these instructions when adding tags to resources that will be created through a CloudFormation template deployed via the AWS CLI.
 
 1. Download and save the [cfn_tags.json](./cfn_tags.json) file to either a local directory or an S3 bucket.
 2. Open the [cfn_tags.json](./cfn_tags.json) file and customize the tag key-value pairs as needed. 
@@ -72,7 +70,7 @@ aws cloudformation create-stack --stack-name teststack --template-body file://cf
 
 ### CloudFormation Templates Run In AWS CodePipeline
 
-AWS CodePipeline can create a continuous delivery workflow for CloudFormation templates, helping automate the creation of stacks and resources.  Tags are added to each of the resources using the CodePipeline template configuration file.  The [codepipeline_template_config.json](./codepipeline_template_config.json) file contains sample tags.  For a walkthrough of using Cloudformation with CodePipeline, see the *Continuous delivery with CodePipeline* section of the *AWS CloudFormation User Guide*.[^4]  The *AWS CloudFormation artifacts* section of the *AWS CloudFormation User Guide* describes the usage and requirements of the template configuration file.[^5]
+AWS CodePipeline can create a continuous delivery workflow for CloudFormation templates, helping automate the creation of stacks and resources.  Tags are added to each of the resources using the CodePipeline template configuration file.  The [codepipeline_template_config.json](./codepipeline_template_config.json) file contains the AWS mandatory tags, along with sample values.  For a walkthrough of using Cloudformation with CodePipeline, see the *Continuous delivery with CodePipeline* section of the *AWS CloudFormation User Guide*.[^4]  The *AWS CloudFormation artifacts* section of the *AWS CloudFormation User Guide* describes the template configuration file.[^5]
 
 ## References
 [^1]:See [Tagging Best Practices](https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html).
